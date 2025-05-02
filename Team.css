@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  min-height: 100vh;
+}
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* .orange-text {
+  color: #ff8c00;
+} */
+
+#header {
+  /* margin-left: 768px;
+  position: fixed; */
+  margin-top: 0;
+  width: 100%;
+  background-color: rgba(51, 39, 39, 0.95);
+  backdrop-filter: saturate(180%) blur(10px);
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo svg {
+  stroke: #ff8c00;
+  fill: none;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-family: 'Poppins', 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #fff;
+  user-select: none;
+}
+
+/* Navigation */
+#nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Poppins', 'Montserrat', sans-serif;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+  color: #ff8c00;
+  transform: scale(1.1);
+  outline: none;
+}
+#hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 25px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+}
+
+#hamburger .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+main {
+  width: 80%;
+  text-align: center; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Heading Section */
+.heading-section {
+  margin-top: 40px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlideIn 1s ease forwards;
+  overflow: hidden;
+  position: relative;
+  height: 50px; /* restrict height to show partial heading */
+}
+
+.title {
+  font-weight: 700;
+  font-size: 40px;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  transform: translateY(-20%);
+  display: inline-block;
+}
+ul li {
+  display: inline-block;
+}
+ul li ul.dropdown li{
+  display: block;
+}
+ul li ul.dropdown {
+  position: absolute;
+  z-index: 999;
+  display: none;
+}
+ul li:hover ul.dropdown {
+  display: block;
+  background-color: #000000;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.big-section {
+  display: flex;
+  flex-direction: row;
+}
+.mission-section {
+  margin: 0 40px ;
+}
+video {
+  width :100%;
+  height:50%;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+/* Team Members Section */
+.team-section {
+  padding-left: 4%;
+  width: 100%;
+}
+
+.team-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: popIn 0.6s ease forwards;
+}
+
+.team-row#row2 {
+  animation-delay: 0.3s;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 20px 8px 30px 8px;
+  background: #ffffff;
+  transition: box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+  box-shadow: 0 8px 16px rgba(255, 140, 0, 0.8);
+}
+
+.photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+  background-color: #a0d8f1; /* default sky color */
+  position: relative;
+  overflow: hidden;
+}
+
+.default-photo {
+  background-image: url('default-bg.svg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+}
+
+.team-member:hover .photo {
+  transform: scale(1.05);
+}
+.team-memberAhmed {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 520px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 20px 8px 30px 8px;
+  background-color: black;
+  transition: box-shadow 0.3s ease;
+  margin: 10px 20px 40px 20px;
+  padding: 20px;
+}
+.team-memberAhmed:hover {
+  box-shadow: 0 8px 16px rgba(255, 140, 0, 0.8);
+}
+.team-memberAhmed:hover .photo {
+  transform: scale(1.05);
+}
+.name {
+  font-weight: 700;
+  font-size: 14px;
+  margin: 0 0 5px 0;
+  color: #333333;
+  transition: color 0.3s ease;
+}
+
+.role {
+  font-weight: 400;
+  font-size: 12px;
+  color: #ff8c00;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.team-member:hover .name,
+.team-member:hover .role {
+  color: #ff8c00;
+}
+
+
+.name1 {
+  font-weight: 500;
+  font-size: 30px;
+  margin: 0 0 0 30px;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.role1 {
+  font-weight: 400;
+  font-size: 30px;
+  color: #ff8c00;
+  margin: 0 0 0 30px;
+  transition: color 0.3s ease;
+}
+/* Animations */
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInSlow {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

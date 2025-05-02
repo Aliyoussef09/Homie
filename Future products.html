@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homie Products</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <style>
+        :root {
+            --primary: #ff8c00;
+            --primary-dark: #e67600;
+            --dark: #0a0a0a;
+            --dark-light: #1a1a1a;
+            --light: #ffffff;
+            --light-dim: #d3d3d3;
+            --border: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== HEADER ===== */
+        /* header {
+            background-color: rgba(10, 10, 10, 0.9);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+            animation: fadeInDown 0.5s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+        } */
+
+        /* ===== PRODUCTS GRID ===== */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 100px;
+            padding: 20px 0;
+        }
+
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image-container {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .product-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.5s ease;
+        }
+        .product--title {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .product--title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.5s ease;
+        }
+        .product-card:hover .product--title::after {
+            width: 100%;
+        }
+
+        .product-card:hover .product-title::after {
+            width: 100%;
+        }
+
+        .product-subtitle {
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+
+        .product-description {
+            color: var(--dark-light);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .cta-button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+            margin-top: auto;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--dark);
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            margin-top: 50px;
+        }
+
+        .footer-text {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+                margin-top: 80px;
+            }
+            
+            .product-image-container {
+                height: 200px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 30px 0;
+            margin-top: 100px;
+            margin-bottom: 50px;
+            align-items: start;
+        }
+        }
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.orange-text {
+  color: #ff8c00;
+}
+
+/* Header */
+#header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(51, 39, 39, 0.95);
+  backdrop-filter: saturate(180%) blur(10px);
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo svg {
+  stroke: #ff8c00;
+  fill: none;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-family: 'Poppins', 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #fff;
+  user-select: none;
+}
+
+/* Navigation */
+#nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Poppins', 'Montserrat', sans-serif;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+  color: #ff8c00;
+  transform: scale(1.1);
+  outline: none;
+}
+
+/* Search bar */
+/* Log In button */
+/* Hamburger menu - hidden on desktop */
+#hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 25px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+}
+
+#hamburger .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+ul li {
+  display: inline-block;
+}
+ul li ul.dropdown li{
+  display: block;
+}
+ul li ul.dropdown {
+  position: absolute;
+  z-index: 999;
+  display: none;
+}
+ul li:hover ul.dropdown {
+  display: block;
+  background-color: #000000;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+    </style>
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header id="header">
+        <div class="container header-container">
+          <div class="logo" id="logo">
+            <img src="https://res.cloudinary.com/dphudihil/image/upload/v1745804346/H-removebg-preview_ibozc1.png" alt="HOMIE logo" />
+            <span class="logo-text">HOMIE</span>
+          </div>
+          <nav id="nav">
+            <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="Team.html">About Us</a></li>
+              <li>
+                <a href="#">Products ▾</a>
+                <ul class="dropdown">
+                  <li><a href="Products.html">Available Products</a></li>
+                  <li><a href="#">Future Products</a></li>
+                </ul>
+              </li>
+              <li><a href="Contact.html">Contact</a></li>
+              <li><a href="Ecofrindly.html">Eco-friendly</a></li>
+            </ul> 
+            <button id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </button>
+          </nav>
+        </div>
+    </header>
+    
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="container">
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="product 1.jpg" alt="Air purifier" class="product-image">
+                </div>
+                <div class="product-info">
+                    <h1 class="product-title">savonius wind turbine</h1>
+                    <p class="product-subtitle">Available products</p>
+                    <div class="price">6,000 L.E</div>
+                    <p class="product-description">Our Savonius wind turbine efficiently harvests wind energy using a vertical-axis design, producing clean electricity. It supports SDG 7 (Affordable and Clean Energy) by promoting renewable power and SDG 13 (Climate Action) by reducing reliance on fossil fuels. It's a sustainable, low-cost solution for decentralized, eco-friendly energy access.</p>
+                    <button class="cta-button">More Information</button>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="product 2.jpg" alt="Smart Sports Energy Wheel" class="product-image">
+                </div>
+                <div class="product-info">
+                    <h1 class="product-title">Smart Sports Energy Wheel</h1>
+                    <p class="product-subtitle">Future products</p>
+                    <div class="price">Coming Soon</div>
+                    <p class="product-description">Our system uses a rotating sports training wheel to generate electricity from athletic motion. As athletes run or train with the wheel, kinetic energy is converted into electrical energy using a dynamo, storing power in rechargeable batteries. It promotes fitness while sustainably powering devices in our smart home.</p>
+                    <button class="cta-button">Available Soon</button>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="product 3.jpg" alt="Smart Water Purifying System" class="product-image">
+                </div>
+                <div class="product-info">
+                    <h1 class="product--title">Smart Water Purifying System</h1>
+                    <p class="product-subtitle">Future products</p>
+                    <div class="price">Coming Soon</div>
+                    <p class="product-description">Our system uses automatic feedback loop to purify acidic wastewater using natural adsorbents and custom-made membranes, removing TDS, Salinity, Turbidity, and acidity efficiently, enabling water reuse for the house. It tackles Egypt's water crisis and supports sustainable development.</p>
+                    <button class="cta-button">Available Soon</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
