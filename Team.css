@@ -320,3 +320,40 @@ video {
     transform: scale(1) translateY(0);
   }
 }
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.querySelector('.nav-links'); // Target the UL directly
+
+hamburger.addEventListener('click', () => {
+  // Toggle the 'active' class on the nav links container
+  navLinks.classList.toggle('active');
+
+  // Toggle the 'active' class on the hamburger for styling (optional animation)
+  hamburger.classList.toggle('active');
+
+  // Toggle aria-expanded attribute for accessibility
+  const isExpanded = navLinks.classList.contains('active');
+  hamburger.setAttribute('aria-expanded', isExpanded);
+});
+
+// Optional: Close mobile menu if a link is clicked
+navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+        }
+    });
+});
+
+// Optional: Close mobile menu if clicking outside the nav
+document.addEventListener('click', (event) => {
+    const isClickInsideNav = navLinks.contains(event.target);
+    const isClickOnHamburger = hamburger.contains(event.target);
+
+    if (!isClickInsideNav && !isClickOnHamburger && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+    }
+});
