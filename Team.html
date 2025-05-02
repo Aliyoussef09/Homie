@@ -15,7 +15,7 @@
         <span class="logo-text">HOMIE</span>
       </div>
       <nav id="nav">
-        <ul class="nav-links">
+        <ul class="nav-links"> {/* Will be hidden on mobile */}
           <li><a href="index.html">Home</a></li>
           <li><a href="Team.html">About Us</a></li>
           <li>
@@ -40,84 +40,85 @@
     <section class="heading-section">
       <h1 class="title">Meet The Team!</h1>
     </section>
-    <!-- <section class="mission-section">
-      <p class="mission">
-        We are 11 students from El-Sadat STEM School in Egypt, passionate about innovation and sustainability. Our mission is to design eco-friendly solutions that redefine smart living.
-      </p> 
-    </section> -->
+    <!-- <section class="mission-section"> ... </section> --> {/* Commented out in original, kept it */}
+
     <section class="big-section">
-    <div class="team-section">
-      <div class="team-row" id="row1">
-        <!-- 6 team members in first row -->
-        <article class="team-member">
-          <div class="photo" style="background-image: url('https://res.cloudinary.com/dphudihil/image/upload/v1745845542/eldesinger_ku2ibq.jpg');"></div>
-          <h3 class="name">Mohamed Alaa</h3>
-          <p class="role">COO</p>
-        </article>
-        <article class="team-member">
-          <div class="photo" style="background-image: url('https://res.cloudinary.com/dphudihil/image/upload/v1745846911/Ali_eldien_sak77l.jpg');"></div>
-          <h3 class="name">Ali Eldeen Sameh</h3>
-          <p class="role">CFO</p>
-        </article>
-        <article class="team-member">
-          <div class="photo" style="background-image: url('https://res.cloudinary.com/dphudihil/image/upload/v1745846039/ana_fo6ucy.jpg');"></div>
-          <h3 class="name">Ali Youssef</h3>
-          <p class="role">CCO</p>
-        </article>
-        <article class="team-member">
-          <div class="photo" style="background-image: url('https://res.cloudinary.com/dphudihil/image/upload/v1745847371/zaid_samir_pnuqcu.jpg');"></div>
-          <h3 class="name">Ziad Samir</h3>
-          <p class="role">CSO</p>
-        </article>
-        <article class="team-member">
-          <div class="photo" style="background-image: url('https://res.cloudinary.com/dphudihil/image/upload/v1745846963/ahmed_ashraf_qbrr11.jpg');"></div>
-          <h3 class="name">ِAhmed Ashraf</h3>
-          <p class="role">CMO</p>
-        </article>
+      <div class="team-section">
+        <div class="team-row" id="row1">
+          {/* Team members 1-5 */}
+          <article class="team-member">
+            <div class="photo" style="background-image: url('https://res.cloudinary.com/dphudihil/image/upload/v1745845542/eldesinger_ku2ibq.jpg');"></div>
+            <h3 class="name">Mohamed Alaa</h3>
+            <p class="role">COO</p>
+          </article>
+          <article class="team-member">
+            <div class="photo" style="background-image: url('https://res.cloudinary.com/dphudihil/image/upload/v1745846911/Ali_eldien_sak77l.jpg');"></div>
+            <h3 class="name">Ali Eldeen Sameh</h3>
+            <p class="role">CFO</p>
+          </article>
+          <article class="team-member">
+            <div class="photo" style="background-image: url('https://res.cloudinary.com/dphudihil/image/upload/v1745846039/ana_fo6ucy.jpg');"></div>
+            <h3 class="name">Ali Youssef</h3>
+            <p class="role">CCO</p>
+          </article>
+          <article class="team-member">
+            <div class="photo" style="background-image: url('https://res.cloudinary.com/dphudihil/image/upload/v1745847371/zaid_samir_pnuqcu.jpg');"></div>
+            <h3 class="name">Ziad Samir</h3>
+            <p class="role">CSO</p>
+          </article>
+          <article class="team-member">
+            <div class="photo" style="background-image: url('https://res.cloudinary.com/dphudihil/image/upload/v1745846963/ahmed_ashraf_qbrr11.jpg');"></div>
+            <h3 class="name">ِAhmed Ashraf</h3>
+            <p class="role">CMO</p>
+          </article>
+        </div>
+
+        <div class="team-row" id="row2">
+          {/* Team members 6-10 */}
+          <article class="team-member">
+            <div class="photo" style="background-image: url('https://res.cloudinary.com/dphudihil/image/upload/v1745847068/azab_q3ivs8.jpg');"></div>
+            <h3 class="name">Omar Azab</h3>
+            <p class="role">CHRO</p>
+          </article>
+          <article class="team-member">
+            <div class="photo" style="background-image: url('https://res.cloudinary.com/dphudihil/image/upload/v1745847022/aboalam_aczsfd.jpg');"></div>
+            <h3 class="name">Abdallah Aboallam</h3>
+            <p class="role">CTO</p>
+          </article>
+          <article class="team-member">
+            <div class="photo" style="background-image: url('https://res.cloudinary.com/dphudihil/image/upload/v1745847259/gaballah_diujnp.jpg');"></div>
+            <h3 class="name">Omar Gaballah</h3>
+            <p class="role">CLO</p>
+          </article>
+          <article class="team-member">
+            <div class="photo" style="background-image: url('https://res.cloudinary.com/dphudihil/image/upload/v1745847211/elbedean_f6iqpd.jpg');"></div>
+            <h3 class="name">Ahmed Barakat</h3>
+            <p class="role">CISO</p>
+          </article>
+          <article class="team-member">
+            <div class="photo" style="background-image: url('https://res.cloudinary.com/dphudihil/image/upload/v1745847404/dawood_btqwfe.jpg');"></div>
+            <h3 class="name">Ahmed Dawod</h3>
+            <p class="role">CPO</p>
+          </article>
+        </div>
       </div>
 
-      <div class="team-row" id="row2">
-        <!-- 5 team members in second row -->
-        <article class="team-member">
-          <div class="photo" style="background-image: url('https://res.cloudinary.com/dphudihil/image/upload/v1745847068/azab_q3ivs8.jpg');"></div>
-          <h3 class="name">Omar Azab</h3>
-          <p class="role">CHRO</p>
+      <section class="mission-section">
+        <article class="team-memberAhmed"> {/* CEO */}
+          <div class="photo" style="background-image: url('https://res.cloudinary.com/dphudihil/image/upload/v1745847301/nasr_dydxkg.jpg');"></div>
+          <div class="ceo-info"> {/* Wrap text for easier flex control */}
+             <h3 class="name1">Ahmed Nasr</h3>
+             <p class="role1">CEO</p>
+          </div>
         </article>
-        <article class="team-member">
-          <div class="photo" style="background-image: url('https://res.cloudinary.com/dphudihil/image/upload/v1745847022/aboalam_aczsfd.jpg');"></div>
-          <h3 class="name">Abdallah Aboallam</h3> 
-          <p class="role">CTO</p>
-        </article>
-        <article class="team-member">
-          <div class="photo" style="background-image: url('https://res.cloudinary.com/dphudihil/image/upload/v1745847259/gaballah_diujnp.jpg');"></div>
-          <h3 class="name">Omar Gaballah</h3>
-          <p class="role">CLO</p>
-        </article>
-        <article class="team-member">
-          <div class="photo" style="background-image: url('https://res.cloudinary.com/dphudihil/image/upload/v1745847211/elbedean_f6iqpd.jpg');"></div>
-          <h3 class="name">Ahmed Barakat</h3>
-          <p class="role">CISO</p>
-        </article>
-        <article class="team-member">
-          <div class="photo" style="background-image: url('https://res.cloudinary.com/dphudihil/image/upload/v1745847404/dawood_btqwfe.jpg');"></div>
-          <h3 class="name">Ahmed Dawod</h3>
-          <p class="role">CPO</p>
-        </article>
-      </div>
-    </div>
-    <section class="mission-section">
-      <article class="team-memberAhmed">
-        <div class="photo" style="background-image: url('https://res.cloudinary.com/dphudihil/image/upload/v1745847301/nasr_dydxkg.jpg');"></div>
-        <h3 class="name1">Ahmed Nasr</h3>
-        <p class="role1">CEO</p>
-      </article>
-       <video autoplay muted loop controls class="video">
-          <source src="Vedio.mp4" type="video/mp4"/>
-          Your browser does not support the video tag.
-        </video>
+         <video autoplay muted loop controls class="video">
+            <source src="Vedio.mp4" type="video/mp4"/>
+            Your browser does not support the video tag.
+          </video>
+      </section>
     </section>
   </main>
 
-  <script src="Team.js"></script>
+  <script src="Team.js"></script> {/* Make sure this file exists */}
 </body>
 </html>
