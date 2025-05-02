@@ -713,6 +713,17 @@ margin-left: 150px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.7);
 }
 
+/* Header */
+#header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(51, 39, 39, 0.95);
+  backdrop-filter: saturate(180%) blur(10px);
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
 .header-container {
   display: flex;
   align-items: center;
@@ -797,24 +808,4 @@ margin-left: 150px;
   background-color: #fff;
   border-radius: 2px;
   transition: all 0.3s ease;
-}
-
-
-ul li {
-  display: inline-block;
-}
-ul li ul.dropdown li{
-  display: block;
-}
-ul li ul.dropdown {
-  position: absolute;
-  z-index: 999;
-  display: none;
-}
-ul li:hover ul.dropdown {
-  display: block;
-  background-color: #000000;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
