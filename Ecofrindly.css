@@ -284,3 +284,12 @@ ul li:hover ul.dropdown {
   border-radius: 2px;
   transition: all 0.3s ease;
 }
+
+@media (max-width: 768px ){
+  .grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px,1fr));
+}
+
+}
